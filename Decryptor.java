@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * @author Jason.Tian
+ * @author Chuan.Tian(Jason)
  */
 public class Decryptor
 {
