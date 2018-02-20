@@ -3,9 +3,11 @@ import java.util.Scanner;
 /**
  * @author Jason.Tian
  */
-public class Decryptor {
+public class Decryptor
+{
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		int line;
 		String keyStr, message;
 
@@ -29,13 +31,15 @@ public class Decryptor {
 
 	}
 
-	public static int columnLength(String message, float keyLength) {
+	public static int columnLength(String message, float keyLength)
+	{
 		int lines;
 		lines = (int) Math.ceil(message.length() / keyLength) + 1;
 		return lines;
 	}
 
-	public static void setupColumn(char column[][], char wordArray[], char key[]) {
+	public static void setupColumn(char column[][], char wordArray[], char key[])
+	{
 		int numOfSpace, line;
 		int wordIndex = 0;
 
@@ -47,20 +51,26 @@ public class Decryptor {
 		numOfSpace = wordArray.length % key.length;
 		line = column.length - 1;
 
-		for (int j = numOfSpace; j < key.length; j++) {
+		for (int j = numOfSpace; j < key.length; j++)
+		{
 			if (numOfSpace == 0)
 				break;
 			else
 				column[line][j] = ' '; // set up blank spaces in the last line of column
 		}
 
-		for (int i = 0; i < key.length; i++) {
-			for (int j = 0; j < key.length; j++) {
-				if (column[0][j] == n[i]) {
-					for (int k = 1; k < column.length; k++) {
+		for (int i = 0; i < key.length; i++)
+		{
+			for (int j = 0; j < key.length; j++)
+			{
+				if (column[0][j] == n[i])
+				{
+					for (int k = 1; k < column.length; k++)
+					{
 						if (column[k][j] == ' ')
 							break;
-						if (wordIndex < wordArray.length) {
+						if (wordIndex < wordArray.length)
+						{
 							column[k][j] = wordArray[wordIndex];
 							wordIndex++;
 						}
@@ -71,7 +81,8 @@ public class Decryptor {
 
 	}
 
-	public static void displayDecryptedMessage(char column[][], char key[]) {
+	public static void displayDecryptedMessage(char column[][], char key[])
+	{
 		System.out.println("The decrypted message is:");
 		for (int i = 1; i < column.length; i++)
 			for (int j = 0; j < key.length; j++)
@@ -79,9 +90,11 @@ public class Decryptor {
 		System.out.print("\n");
 	}
 
-	public static void displayColumn(char column[][], char key[]) {
+	public static void displayColumn(char column[][], char key[])
+	{
 		System.out.print("\n");
-		for (int i = 0; i < column.length; i++) {
+		for (int i = 0; i < column.length; i++)
+		{
 			for (int j = 0; j < key.length; j++)
 				System.out.print(column[i][j]);
 			System.out.print("\n");
