@@ -26,8 +26,7 @@ public class Decryptor
 
 		setupColumn(column, wordArray, key);
 		displayDecryptedMessage(column, key);
-		// displayColumn(column,key); //display the column (for test) if u want to see
-		// how it works
+		// displayColumn(column,key); //display the column (for test)
 
 	}
 
